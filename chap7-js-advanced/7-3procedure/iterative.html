@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        // 命令式
+        let list = [1, 2, 3, 4];
+        let map1 = [];
+        for(let i=0; i<list.length; i++){
+            map1.push(list[i]*2);
+        }
+        console.log(map1);
+        
+        // 声明式
+        // let list = [1, 2, 3, 4];
+        const mySquare  = x=>x*2;
+        console.log(list.map(mySquare));
+
+        // first
+        function add(x, y){
+            return x+y;
+        }
+
+        function sub(x, y){
+            return x-y;
+        }
+
+        console.log(list.reduce(add));
+        console.log(list.reduce(sub));
+
+        // second
+        function iterative(fn){
+            return function(...args){
+                return args.reduce(fn.bind(this));
+            }
+        }
+
+        const myAdd = iterative((x, y) => x+y);
+        const mySub = iterative((x, y) => x-y);
+        
+        console.log(myAdd(1, 2, 3, 4));
+        console.log(mySub(1, 2, 3, 4));
+    </script>
+</body>
+</html>

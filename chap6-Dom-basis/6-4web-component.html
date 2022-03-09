@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <card-component width="18rem" img="./img/4.jpg">
+        <span slot="title">Card title</span>
+    </card-component>
+    <card-component width="18rem" img="./img/3.jpg">
+        <span slot="title">The second title</span>
+    </card-component>
+
+
+    <script type="text/javascript">
+        // 自定义元素的时候，元素类中
+        // constructor()会在创建自定义元素时调用
+        // connectedCallback()会在自定义元素被插入文本时调用
+        // disconnectedCallback()会在自定义元素从文档中移除时调用
+        // attributeChangedCallback()会在指定自定义元素属性被设置或者修改的时候调用
+        
+        // HTMLTemplateElement只有一个content属性，其cloneNode()方法可以传入参数true或者false
+        // 当为true的时候为深度复制，否则为浅复制，浅复制就是只复制引用不复制对象
+        // 一般会传入true
+
+        // 宿主添加shadow的时候属性mode一般为open，open表示可以在外界查询到shadow DOM中的子元素
+        // 否则不行
+
+        // 使用模板组织组件的内容。innerHTML可以设置为模板的内容
+
+        const template = document.createElement('template')
+        template.innerHTML = `
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+            <div class="card">
+                <img class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <slot name="title">
+                            temporary title                            
+                        </slot>
+                    </h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <!-- <slot>More text...</slot> --!>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <style>
+                .card {
+                    margin-bottom: 1rem;
+                }
+            </style>
+        `
+        
+        class CardComponent extends HTMLElement {
+            constructor(){
+                super()
+                this.attachShadow({mode: 'open'})
+                this.shadowRoot.append(template.content.cloneNode(true))
+            }
+
+            connectedCallback(){
+                this.shadowRoot.querySelector('.card').style.width = this.getAttribute('width')
+                this.shadowRoot.querySelector('img').setAttribute('src', this.getAttribute('img'))
+            }
+        }       
+        
+        customElements.define('card-component', CardComponent)
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--多个空格或者换行会解析成一个空格-->
+    <p>hello          world!</p>
+    <p>你好，
+        
+    
+        世界
+    </p>
+
+    <!--预先格式化标签-->
+    <pre>hello          world!</pre>
+    <pre>你好，
+        
+    
+        世界
+    </pre>
+
+    <!--Entity 实体字符-->
+    <!--
+        HTML中的一些字符如果想要用到文中需要转义，如
+
+        &nbsp;  -   空格
+        &lt;    -   <
+        &gt;    -   >
+        &amp;   -   & 
+    
+    -->
+    <p>&lt;你好&gt;</p>
+</body>
+</html>

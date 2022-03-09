@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            background: lightblue;
+            line-height: 2;
+            justify-content: space-around;
+        }
+
+        /* 表示最大960px宽度生效，即960px以内生效 */
+        @media screen and (max-width: 960px) {
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Posts</a>
+        <a href="#">Links</a>
+        <a href="#">About</a>
+    </nav>
+</body>
+</html>

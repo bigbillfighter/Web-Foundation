@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 10em;
+            font-size: 20px;
+            /* 这个表示当一行放不下一个单词的时候会折行显示这个单词 */
+            overflow-wrap: break-word;
+            background: #fcc;
+        }
+
+        em {
+            display: inline-block;
+            width: 3em;
+            background: #99f;
+        }
+
+        div div{
+            width: 20em;
+            background: #91f;
+            border: solid;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        This is a paragraph text with long word 
+        Honorificabilitudinitatibus. Here is an 
+        <div>whatever</div> image 
+        <img src="./img/cat.png" alt="cat">
+        And <em>Inline Block</em>
+    </div>
+</body>
+</html>

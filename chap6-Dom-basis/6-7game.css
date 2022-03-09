@@ -1,0 +1,111 @@
+body {
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.highlight {
+    color: lightsalmon;
+}
+
+aside {
+    flex: 0 0 auto;
+    width: 280px;
+    height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: lightsalmon;
+    font-size: 0;
+    overflow: scroll;
+}
+
+main {
+    display: flex;
+    flex: 1 1 auto;
+    background-color: darkslategray;
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+}
+
+main .panel {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    border: 4px solid #fff;
+}
+
+.panel p .highlight:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.panel.empty p {
+    display: inline;
+    font-size: 18px;
+    color: white;
+    margin: auto;
+}
+
+.panel p {
+   display: none;
+}
+
+
+/*以上均没有问题*/
+.piece {
+    display: inline-block;
+    box-sizing: border-box;
+    outline: 2px solid rgba(0, 0, 0, 0.75);
+    transition: opacity 1.5s ease;
+}
+
+.piece .draging {
+    opacity: 0.3;
+}
+
+aside .piece {
+    margin: 1px;
+}
+
+
+.panel .piece {
+    flex: 0 0 auto;
+    opacity: 0.1;
+}
+
+.panel .piece .matched {
+    opacity: 1;
+    outline: 0;
+}
+
+.panel .piece .dragenter {
+    opacity: 0.4;
+}
+
+.congratulations {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    font-size: 80px;
+}
+
+.congratulations span{
+    margin: auto;
+}
+
+body .completed .congratulations{
+    display: flex;
+}
+
+body .completed .congratulations span {
+    animation: zoomIn 0.6s ease, wobble 0.5s 0.5s ease;
+}

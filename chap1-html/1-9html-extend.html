@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- <meta>标签表示页面的元数据 -->
+
+    <!-- 通常我们可以对html进行一些扩展 -->
+    <!-- 通过meta标签我们可以进行一些方便的扩展 -->
+    
+    <!-- 设定文件的编码 -->
+    <meta charset="UTF-8">
+    
+    <!-- 指定http协议传输的header -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self">
+
+    <!-- SEO 搜索引擎优化 -->
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="页面介绍">
+
+    <!-- 移动设备的展示样式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 关闭ios系统电话号码自动识别 -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 设置浏览器指定内核 -->
+    <meta name="renderer" content="webkit">
+    
+    <!-- 设定IE的渲染模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <!-- 通过<link>标签扩充 -->
+    <!-- 引入css样式 -->
+    <link rel="stylesheet" href="/example.css">
+    
+    <!-- 指定Favicon -->
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- 提供RSS -->
+    <link rel="alternate" href="/rss.xml" type="application/rss+xml">
+
+    <!-- 预选加载资源 -->
+    <link rel="prefetch" href="./img/4.jpg">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 我们可以自定义一些属性，一般自定义的属性都是以“data-xxx”的格式组织 -->
+    <ul>
+        <li data-id="1">apple</li>
+        <li data-id="2">banana</li>
+        <li data-id="3">mango</li>
+    </ul>
+
+
+    <!-- 我们可以使用microdata对一些比较难以定义的内容进行定义 -->
+    <!-- 首先看一个书的定义 -->
+
+    <!-- div用于分割区域，dl表示描述列表，dt表示一个项目，dd表示项目里面的一项 -->
+    <!-- span也仅仅是用于分割文字 -->
+    <!-- 这几个标签主要是为了配合css，比较通用，和内容的对应性不强 -->
+    <div>
+        <h1>梦的化石</h1>
+        <img src="./img/6.jpg" alt="封面">
+        <dl>
+            <dt>作者</dt>
+            <dd>
+                <span>[日]</span>
+                <span>今敏</span>
+            </dd>
+            <dt>ISBN:</dt>
+            <dd>9727348299843</dd>
+        </dl>
+        <p>本书是今敏漫画故事短篇全集，收录了...</p>
+    </div>
+
+    <!-- 使用microdata引入类型 -->
+    <!-- 首先要包含itemscope属性，里面的itemtype属性表示这个类型的网络所在地址 -->
+    <!-- itemprop表示类型里面的哪一部分 -->
+    <div itemscope itemtype="http://schema.org/Book">
+        <h1 itemprop="name">梦的化石</h1>
+        <img src="./img/6.jpg" alt="封面" itemprop="image">
+        <dl>
+            <dt>作者</dt>
+            <dd itemprop="author"itemscope itemtype="http://schema.org/Person">
+                <span itemprop="nationality">[日]</span>
+                <span itemprop="name">今敏</span>
+            </dd>
+            <dt>ISBN:</dt>
+            <dd itemprop="isbn">9727348299843</dd>
+        </dl>
+        <p itemprop="description">本书是今敏漫画故事短篇全集，收录了...</p>
+    </div>
+</body>
+</html>

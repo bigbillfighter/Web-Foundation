@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">1<span>2</span><!-- 3 --></p>
+    <div id="main">
+        <button id="bnt01" name="bnt">01</button>
+        <button id="bnt02" name="bnt">02</button>
+        <button id="bnt03" name="bnt">03</button>
+        <button id="bnt04" name="bnt">04</button>
+        <button id="bnt05" name="bnt">05</button>
+        <button id="bnt06" name="bnt">06</button>
+        <button id="bnt07" name="bnt">07</button>
+        <button id="bntclick">点击创建节点</button>
+    </div>
+
+    <!-- dom获取的方式 -->
+    <script type="text/javascript">     
+        let bnt3 = document.getElementById('bnt03');
+        console.log(bnt3.previousSibling);
+        console.log(bnt3.previousElementSibling);
+        console.log(bnt3.nextSibling);
+        console.log(bnt3.nextElementSibling);
+
+        document.getElementById('bntclick').addEventListener('click', function(){
+            let a = document.createElement('a');
+            a.textContent = 'link to baidu.com';
+            
+            // 设置属性
+            // 区别就是第一种只能创建该标签已有的属性，后一种可以新增属性
+            // 还有第二种创建的属性一定会在DOM树上而第一种不一定
+            a.href = 'https://www.baidu.com';
+            a.setAttribute('target', '_blank');
+            
+            // 第一种比较常用
+            a.style.cssText = 'color: red; background: #fcc';
+            a.style.fontSize = '40px';
+            
+            document.body.appendChild(a);
+        }, false)
+    </script>
+</body>
+</html>
+

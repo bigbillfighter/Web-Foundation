@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 测试flex -->
+    <style>
+        .container {
+            display: flex;
+            height: 300px;
+            border: 2px solid red;
+        }
+
+        .a, .b, .c{
+            text-align: center;
+            padding: 2em;
+        }
+
+        .a {background: #fcc;}
+        .b {background: #cfc;}
+        .c {background: #ccf;}
+
+        /* .a, .b, .c { flex-grow: 1; } */
+        .a, .b, .c{flex: 1 1 0;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="a">AAAAAAAAAAA</div>
+        <div class="b">BBBBBB</div>
+        <div class="c">C</div>
+    </div>
+</body>
+</html>

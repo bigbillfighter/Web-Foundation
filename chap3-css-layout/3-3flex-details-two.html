@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 测试align-items -->
+    <style>
+        .container {
+            display: flex;
+            height: 300px;
+            border: 2px solid red;
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            align-items: stretch;
+            /* align-items: baseline; */
+            /* flex-direction: column; */
+        }
+
+        .a, .b, .c {
+            text-align: center;
+            padding: 2em;
+        }
+
+        .a{align-self: flex-start;}
+        .b{align-self: flex-end;}
+
+        .a{background-color: #fcc; font-size: 16px;}
+        .b{background-color: #cfc; font-size: 20px;}
+        .c{background-color: #ccf; font-size: 24px;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="a">AAAAAAAAAAA</div>
+        <div class="b">BBBBBB</div>
+        <div class="c">C</div>
+    </div>
+</body>
+</html>

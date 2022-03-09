@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mybutton">Click me</button>
+    
+    <script type="text/javascript">
+        // 事件对象作为事件处理函数的参数传入
+        // 每个事件对象都有 type 和 target属性，表示事件类型和事件目标
+        // 还有一些其他属性
+        // currentTarget：对于传播的事件，这个属性是注册当前事件处理程序的对象
+        // timeStamp:时间戳，不是绝对时间，可以用第二个事件的时间戳减去第一个事件的，得到两个事件相隔了多长时间
+        // isTrusted：如果事件由浏览器自身派发，这个属性为true，如果由js派发(dispatchEvent()函数)，为false
+        // 有些事件有与之相关联的默认动作，比如点击一个超链接，浏览器会加载一个新页面
+        // 可以使用event.preventDefault()函数来阻止事件的默认动作发生
+        // 如果想取消事件在DOM树上的传播，可以使用stopPropagation()函数，这样在捕获阶段和事件本省阶段，可以停止事件传播到后续的目标上
+        // 但是事件目标本身上注册的同一事件的其它函数还会被调用
+        // 如果想要同一事件后续注册的函数不被调用，则要使用stopImmediatePropragation()函数
+        let b = document.querySelector('#mybutton');
+        // 多个事件响应函数会按照写的顺序依次执行
+        b.onclick = function(){
+            console.log("Thanks for clicking me!");
+        }
+        b.addEventListener('click', () => {console.log("Thanks again!"); }, false);
+        
+ </script>
+</body>
+</html>

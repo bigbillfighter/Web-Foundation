@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 中文也可以使用字体。只是整个字体文件会比较大，我们一般把我们需要的 -->
+    <!-- 字提取出一个文件使用。这样文件大小会比较小。 -->
+
+    <!-- font-size设置字体大小的几种方式 -->
+    <!-- 1.关键字：small、medium、large -->
+    <!-- 2.长度：px，em。px是像素，em表示是父级大小的倍数，如 2em表示父级字体大小大小的2倍 -->
+    <!-- 3.百分数：相对于父元素的字体大小 -->
+
+    <style>
+        section {
+            font-size: 20px;
+        }
+
+        section h1 {
+            font-size: 2em; 
+        }
+
+        section .note{
+            font-size: 80%;
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>A web font example</h1>
+        <p class="note">Notes: Web fonts...</p>
+        <p>With this in mind, let's build...</p>
+    </section>
+
+</body>
+</html>

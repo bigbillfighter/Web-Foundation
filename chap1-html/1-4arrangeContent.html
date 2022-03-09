@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--html从h1到h6表示1级到6级标题-->
+    <h1>字体排印学</h1>
+    <h2>历史</h2>
+    <p>
+        活字的雏形或可追溯到公元前两千年前后美索不达米亚文明的乌鲁克和拉尔萨，
+        砖块上面不均匀的印花被视为可能是活字思想雏形
+    </p>
+    <h3>印刷体源流</h3>
+    <p>
+        中国在唐代就已经出现雕版印刷术，公元868年的《金刚经》是现存
+        最古老的印刷品之一，使用的技术即使木雕版印刷
+    </p>
+    <h2>应用</h2>
+    <p>...</p>
+
+
+    <!--article标签表示一篇独立的文章，如一个帖子，一篇博客-->
+    <!--section可以用来区分章节，将相互之间独立的内容进行拆分-->
+    <!--当内容上不是相互独立的时候，可以使用div标签-->
+    <article>
+        <h1>字体排印学</h1>
+        <section>
+            <h2>历史</h2>
+            <p>
+                活字的雏形或可追溯到公元前两千年前后美索不达米亚文明的乌鲁克和拉尔萨，
+                砖块上面不均匀的印花被视为可能是活字思想雏形
+            </p>
+            <section>
+                <h3>印刷体源流</h3>
+                <p>
+                    中国在唐代就已经出现雕版印刷术，公元868年的《金刚经》是现存
+                    最古老的印刷品之一，使用的技术即使木雕版印刷
+                </p>
+            </section>    
+        </section>
+        <section>
+            <h2>应用</h2>
+            <p>...</p>
+        </section>
+        
+    </article>
+
+    <!--有序列表，用ol标签，意为ordered list-->
+    <!--一个列表项用一个li标签包裹，意为list item-->
+    <h2>世界电影排行榜</h2>
+    <ol start="1">
+        <li>阿凡达</li>
+        <li>泰坦尼克号</li>
+        <li>复仇者联盟</li>
+    </ol>
+
+    <!--使用ul表示无序列表，unordered list-->
+    <h2>购物清单</h2>
+    <ul>
+        <li>🍇</li>
+        <li>🍉</li>
+        <li>🍎</li>
+    </ul>
+
+    <!--列表嵌套-->
+    <ul>
+        <li>1个西瓜</li>
+        <li>2瓶矿泉水</li>
+        <li>1盒酸奶</li>
+        <li>
+            垃圾袋
+            <ul>
+                <li>大号垃圾袋</li>
+                <li>小号垃圾袋</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!--定义列表使用dl，discription list，表示 key-value 类型的项-->
+    <!--dt表示名称term，dd表示介绍discription，dt为key，dd为value-->
+    <h2>霸王别姬</h2>
+    <dl>
+        <dt>导演：</dt>
+        <dd>陈凯歌</dd>
+
+        <dt>主演：</dt>
+        <dd>张国荣</dd>
+        <dd>张丰毅</dd>
+        <dd>巩俐</dd>
+
+        <dt>上映时间：</dt>
+        <dd>1993-01-01</dd>
+    </dl>
+
+    <!--使用nav表示导航-->
+    <!--header里面是页面顶部的信息-->
+    <header>
+        <h1><img src="./img/3.jpg" alt="Logo"></h1>
+        <nav>
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/products">产品列表</a></li>
+                <li><a href="/help">帮助</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html> 

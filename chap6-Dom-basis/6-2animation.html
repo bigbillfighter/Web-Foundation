@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        // 单位为毫秒，表示从1970年1月1日0点开始到现在的毫秒数
+        console.log(new Date().getTime());
+        console.log(new Date());
+        console.log(Date.now());
+        // 精确到小数点后第三位，所以精度为微妙，单位为毫秒
+        // 表示从网页打开到运行perfomance.now()经过的时间
+        // ie 10 以上支持
+        console.log(window.performance.now());
+    </script>
+</body>
+</html>

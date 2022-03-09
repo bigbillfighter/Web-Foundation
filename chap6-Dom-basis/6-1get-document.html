@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <ul class="list">
+            <li><button name="bnt01">01</button></li>
+            <li><button name="bnt02">02</button></li>
+            <li><button name="bnt03">03</button></li>
+            <li><button name="bnt04">04</button></li>
+            <li><button name="bnt05">05</button></li>
+            <li><button name="bnt06">06</button></li>
+            <li><button name="bnt07">07</button></li>
+        </ul>
+    </div>
+
+    <!-- dom获取的方式 -->
+    <script type="text/javascript">
+        // 根据id获取dom时只会获取第一个    
+        console.log(document.getElementById('main')); // 对象
+        console.log(document.getElementsByClassName('list')); // HTMLCollection
+        console.log(document.getElementsByTagName('li')); // HTMLCollection
+        console.log(document.getElementsByName('bnt01')); //HTMLColletion
+        console.log(document.getElementById('main').getElementsByTagName('li')); //dynamic NodeList
+
+        // 通过CSS选择器获取
+        console.log(document.querySelector('#main')); // 对象
+        console.log(document.querySelectorAll('.list')); // static NodeList
+        console.log(document.querySelectorAll('li'));
+        console.log(document.querySelectorAll('[name=bnt01]'));
+        // nth-child(n+5)表示从第5个开始
+        console.log(document.querySelectorAll('#main > .list li:nth-child(n+5) > button[name^=bnt]'));
+    </script>
+</body>
+</html>

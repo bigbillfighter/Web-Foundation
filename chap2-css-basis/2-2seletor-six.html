@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 结构性伪类 -->
+    <style>
+        li {
+            list-style-position: inside;
+            border-bottom: 1px solid;
+            padding: 0.5em;
+        } 
+        /* 为列表的第一项设置颜色 */
+        li:first-child {
+            color:coral;
+        }
+        /* 设置最后一项底部没有边框 */
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>电影票房排行</h2>
+    <ol>
+        <li>阿凡达</li>
+        <li>泰坦尼克号</li>
+        <li>星球大战：原力觉醒</li>
+        <li>复仇者联盟</li>
+        <li>侏罗纪世界</li>
+    </ol>
+</body>
+</html>

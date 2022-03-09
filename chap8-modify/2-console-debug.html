@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://www.eastta.com/chrome/console.html -->
+<html><head lang="zh-cmn-Hans"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="dongtianee">
+    <meta name="Keywords" content="demo">
+    <meta name="description" content="前端调试部分demo">
+    <link rel="icon" type="image/png" href="./console-debug_files/t0127ebfa5a829054f1.png">
+    <title>Chrome Dev Tools - Console</title>
+    <!--base——CSS——begin-->
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #fff;
+            font: normal normal 16px/1.5 "微软雅黑",sans-serif;
+        }
+        .main{
+             max-width:800px;
+             background: #fff;
+             padding: 30px 10px;
+             margin:auto;
+             position: relative;
+             box-shadow:2px 2px 10px 5px #fff;
+         }
+        .title{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #396cd7;
+            line-height: 20px;
+        }
+        .title .title-link{
+            color: #999;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .title img,.title span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer{
+            margin-top:20px;
+            border-top: 1px solid #a5a5a5;
+            padding: 10px;
+            text-align: center;
+        }
+        div,p,ul,ol{
+            margin: 0;
+        }
+        code{
+            display: block;
+            color:#999
+        }
+    </style>
+    <!--base——CSS——end-->
+    <!--CSS——begin——-->
+    <style>
+        details{
+            margin: 15px 0 0 0;
+        }
+        details > * {
+            margin-bottom: 15px;
+        }
+       
+    </style>
+    <!--CSS——end——-->
+<script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script></head>
+<body>
+    <!--HTML——begin——-->
+    <div class="main">
+        <div class="title">
+            <img src="./console-debug_files/t0127ebfa5a829054f1.png" width="20" height="20"> <span>Chrome DevTools</span>
+        </div>
+        <h3>Console</h3>
+        <details>
+            <summary>1. console方法</summary>
+            <ul>
+                <li>console.log，多参数：<code>console.log('%ccuqbwdw','font-size: 30px;color: #f00')</code></li>
+                <li>console.info,console.warn,console.error多语义输出：<code>console.warn('参数错误：',$_)</code></li>
+                <li>console.table,console.group格式化输出：<code>console.table({'name':'tiandongdong', email: 'dongtianee@gmail.com'})</code></li>
+                <li>console.time,console.timeEnd计时函数：<code>console.time('time1');console.timeEnd('time1')</code></li>
+                <li>console.assert断言函数：<code>console.assert(1&gt;2,'1不可能大于2')</code></li>
+                <li>console.clear清空控制台:<code>console.clear()</code></li>
+                <li>console的实际应用 - <a href="https://www.so.com/" target="_blank">https://www.so.com</a>埋点统计插件</li>
+                <li>……</li>
+                <li>更多内容参考<a href="https://developers.google.com/web/tools/chrome-devtools/console/api" target="_blank">https://developers.google.com/web/tools/chrome-devtools/console/api</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>2. 快捷函数与变量</summary>
+            <ul>
+                <li>$0 ~ $4</li>
+                <li>$()、$$()、$x()</li>
+                <li>$_</li>
+                <li>clear()</li>
+                <li>debug()</li>
+                <li>getEventListeners，巧用getEventListeners<p><button onclick="console.log(&#39;clicked&#39;)">点击</button></p><code>getEventListeners($0)</code></li>
+                <li>keys/values<code>keys({'name':'tiandongdong', email: 'dongtianee@gmail.com'})</code></li>
+                <li>monitor/unmonitor<code>monitor(getEventListeners($0).click[0].listener)</code></li>
+                <li>monitorEvents/unmonitorEvents<code>monitorEvents(window,'scroll')</code><code>monitorEvents(window,['resize','scroll'])</code></li>
+                <li>……</li>
+                <li>更多内容参考<a href="https://developers.google.com/web/tools/chrome-devtools/console/utilities" target="_blank">https://developers.google.com/web/tools/chrome-devtools/console/utilities</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>3. 其它</summary>
+            <ul>
+                <li>日志过滤</li>
+                <li>运行环境选择</li>
+                <li>日志保留</li>
+                <li>运行时建议<p><button onclick="showSuggestion()">显示建议</button></p></li>
+            </ul>
+        </details>
+    </div>
+
+    <!--HTML——end——-->
+
+    <!--JavaScript——begin——-->
+    <script>
+        function sum(a,b) {
+            return a+b
+        }
+        function showSuggestion(){
+            alert('show suggestion')
+        }
+    </script>
+    <!--JavaScript——end——-->
+
+</body></html>

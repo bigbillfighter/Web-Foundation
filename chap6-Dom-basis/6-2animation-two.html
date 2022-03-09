@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+    <style>
+        div {
+            margin-top: 100px;
+        }
+    </style> -->
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="100"></canvas>
+    <div>
+        <button id="bnt1">setTimeOut</button>
+        <button id="bnt2">ref</button>
+    </div>
+
+    <script type="text/javascript">
+
+        // 延时执行
+        // 1. let timer = setTimeout(function, delay)
+        // 清除：clearTimeout(timer);
+        // 2. requestAnimationFrame(function)
+        // 使用cancelAnimationFrame可以撤销，传入参数为requestAnimationFrame的返回对象
+
+        // requestAnimationFrame会在每次浏览器渲染之前执行，而setTimeout会每隔一段时间执行
+        // 但是setTimeOut会由于卡顿导致实际会超过延时时间，而且会产生丢帧的问题
+
+        // 其它延时方法如setIntervel
+        // setInterval不会停下，使用clearInterval清除
+        (function(){
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            document.getElementById('bnt1').addEventListener('click', function(ev){
+                let x = 0;
+                ctx.clearRect(0, 0, 10000, 100);
+                function frame(){
+                    x += 20;
+                    if(x<1000){
+                        setTimeout(frame, 10);
+                    }else{
+                        x = 1000;
+                    }
+                }
+                setTimeout(frame, 10);
+                function draw(){
+                    ctx.fillRect(x, 45, 10, 10);
+                    requestAnimationFrame(draw);
+                }
+
+                requestAnimationFrame(draw);
+            }, false);
+
+            document.getElementById('bnt2').addEventListener('click', function(ev){
+                let x = 0;
+                ctx.clearRect(0, 0, 10000, 100);
+                function frame(){
+                    x += 20;
+                    if(x<1000){
+                        requestAnimationFrame(frame, 10);
+                    }else{
+                        x = 1000;
+                    }
+                }
+                requestAnimationFrame(frame);
+                function draw(){
+                    ctx.fillRect(x, 45, 10, 10);
+                    requestAnimationFrame(draw);
+                }
+
+                requestAnimationFrame(draw);
+            }, false);
+
+
+        })();
+    </script>
+</body>
+</html>

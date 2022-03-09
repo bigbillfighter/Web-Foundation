@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div {
+            width:40px;
+            height:40px;
+            background:red;
+            margin-top: 20px;
+            margin-left: 20px;
+            border-radius:50%;
+
+
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="btn1">非均匀动画</button>
+    <button id="btn2">丢帧保时</button>
+    <button id="btn3">延时保帧</button>
+
+    <label><input type="radio" name='obstruct' value="0" checked>无干扰</label>
+    <label><input type="radio" name='obstruct' value="10000000">弱干扰</label>
+    <label><input type="radio" name='obstruct' value="20000000">强干扰</label>
+    <div id="div"></div>
+
+    <script type="text/javascript">
+        (function(){
+            function obstruct(){
+                const obElem = document.querySelector('input[name=obstruct]:checked');
+                const ob = Math.random()*5*obElem.value;
+                // console.log(ob);
+                let j = 0;
+                for (let i=0; i<ob; i++){
+                    j++;
+                }
+                console.log(`本次干扰函数运行${j}次`);
+
+            }
+            const div = document.getElementById('div');
+
+            // 非均匀动画
+            document.getElementById('btn1').addEventListener('click', function(ev){
+                let x = 0;
+                div.style.marginLeft = '0';
+                function frame() {
+                    obstruct();
+                    x+=17;
+                    if(x<1000){
+                        requestAnimationFrame(frame);
+                    }else{
+                        x = 1000;
+                    }
+                    div.style.marginLeft = `${x}px`;
+                }
+                requestAnimationFrame(frame);
+            }, false);
+            
+            // 丢帧保时
+            document.getElementById('btn2').addEventListener('click', function(ev){
+                let x = 0;
+                div.style.marginLeft = '0';
+                function frame(){
+                    obstruct();
+                    let time = performance.now();
+                    x = Math.min(1000, time-startTime);
+                    if(x < 1000){
+                        requestAnimationFrame(frame);
+
+                    }
+                    div.style.marginLeft = `${x}px`;
+                }
+                let startTime = performance.now();
+                requestAnimationFrame(frame);
+            }, false);
+
+            // 延时保帧
+            document.getElementById('btn3').addEventListener('click', function(){
+                let x = 0;
+                div.style.marginLeft = '0';
+                function frame(){
+                    obstruct();
+                    let time = performance.now();
+                    let lastX = x;
+                    x = Math.min(1000, time-startTime);
+                    // 如果超时了，就要丢一些帧以保证运行的时间
+                    if(x > nextKeyFrame){
+                        // 如果超的太多，就回退一点，保证中间的帧不丢失太多
+                        if((x-lastX) > 100){
+                            startTime += (x-nextKeyFrame);
+                            x = nextKeyFrame;
+                        }
+                        nextKeyFrame += 50;
+                    }
+
+                    if(x<1000){
+                        requestAnimationFrame(frame);
+                    }
+                    div.style.marginLeft = `${x}px`;
+                }
+
+                let startTime = performance.now();
+                let nextKeyFrame = 50;
+                requestAnimationFrame(frame);
+            }, false);
+        })();
+    </script>
+</body>
+</html>

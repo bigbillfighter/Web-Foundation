@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.eastta.com/chrome/elements.html -->
+<html><head lang="zh-cmn-Hans"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="dongtianee">
+    <meta name="Keywords" content="demo">
+    <meta name="description" content="前端调试部分demo">
+    <link rel="icon" type="image/png" href="./elements-debug_files/t0127ebfa5a829054f1.png">
+    <title>Chrome DevTools - Elements</title>
+    <!--base——CSS——begin-->
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #fff;
+            font: normal normal 16px/1.5 "微软雅黑",sans-serif;
+        }
+        .main{
+             max-width:800px;
+             background: #fff;
+             padding: 30px 10px;
+             margin:auto;
+             position: relative;
+             box-shadow:2px 2px 10px 5px #fff;
+         }
+        .title{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #396cd7;
+            line-height: 20px;
+        }
+        .title .title-link{
+            color: #999;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .title img,.title span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer{
+            margin-top:20px;
+            border-top: 1px solid #a5a5a5;
+            padding: 10px;
+            text-align: center;
+        }
+        div,p,ul,ol{
+            margin: 0;
+        }
+    </style>
+    <!--base——CSS——end-->
+    <!--CSS——begin——-->
+    <style>
+        details{
+            margin: 15px 0 0 0;
+        }
+        details > * {
+            margin-bottom: 15px;
+        }
+
+        .example1 p:first-child{
+            color: #f00
+        }
+
+        .input{
+            width: 260px;
+            padding: 8px 10px;
+            color: #333;
+            line-height: 26px;
+            height: 26px;
+            display: block;
+            -webkit-appearance: none;
+            border: 1px solid #eee
+        }
+        .btn{
+            background: #f00;
+        }
+        .btn:hover{
+            background-color: #ff0
+        }
+        .weak{
+            color: #fee;
+            text-shadow:  0 0 #fff;
+            transition: color ease-in .2s
+        }
+    </style>
+    <!--CSS——end——-->
+<script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script></head>
+<body onclick="clickBody()">
+    <!--HTML——begin——-->
+    <div class="main">
+        <div class="title">
+            <img src="./elements-debug_files/t0127ebfa5a829054f1.png" width="20" height="20"> <span>Chrome DevTools</span>
+        </div>
+        <h3>Elements</h3>
+        <details open="">
+            <summary>1. 查看页面元素当前生效的样式与继承来、计算后的样式</summary>
+            <div class="example1">
+                <p>一行文字</p>
+                <p>一行文字</p>
+                <p>一行文字</p>
+                <p>影响当前DOM的样式按照优先级从高到低进行排序</p>
+            </div>
+        </details>
+        <details open="">
+            <summary>2. 查看浏览器原生组件的样式</summary>
+            <div>
+                <input type="search" class="input">
+            </div>
+        </details>
+        <details>
+            <summary>3. 神奇的拷贝</summary>
+            <div>
+                <ol>
+                    <li>拷贝html片段</li>
+                    <li>拷贝JS选择器</li>
+                    <li>拷贝样式</li>
+                    <li>拷贝xpath</li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>4. 神奇的自动补全与提示</summary>
+            <div>
+                比IDE还好用。
+            </div>
+        </details>
+        <details>
+            <summary>5. 状态模拟</summary>
+            <div>
+                <button class="btn">你好</button>
+            </div>
+        </details>
+        <details>
+            <summary>6. 优秀的颜色选择器、shadow选择器、animation选择器与快捷插入</summary>
+            <div>
+                <p class="weak">你能看见我吗？</p>
+            </div>
+        </details>
+        <details>
+            <summary>7. 搜索</summary>
+            <div>
+                <p>可以搜索文本、样式，甚至元素。</p>
+                <p>可以搜索计算后的样式，快速定位</p>
+            </div>
+        </details>
+        <details>
+            <summary>8. 已绑定事件</summary>
+            <div>
+                <button id="click" onclick="clickButton()">点击</button>
+            </div>
+        </details>
+    </div>
+
+    <!--HTML——end——-->
+
+    <!--JavaScript——begin——-->
+    <script>
+        function clickButton(){
+            console.log('button clicked');
+        }
+
+        function clickBody(){
+            console.log('body clicked')
+        }
+    </script>
+    <!--JavaScript——end——-->
+
+</body></html>

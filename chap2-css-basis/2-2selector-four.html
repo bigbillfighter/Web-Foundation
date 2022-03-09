@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- 属性选择器，所有input标签里面的含有disabled属性的都被设置为这个样式 -->
+    <style>
+        intput[disabled]{
+            background: #eee;
+            color: #999;
+        }
+        input[type="password"]{
+            border-color: red;
+            color:red;
+        }
+
+        /* href 以 # 开头 的被这是成这个样式 */
+        a[href^="#"]{
+            color: #f54767;
+            background: 0 center/1em url(top.svg) no-repeat;
+            padding-left: 1.1em;
+        }
+        
+        /* href 以 .jpg 结尾的被设置为这个样式 */
+        a[href$=".jpg"]{
+            color: deepskyblue;
+            background: 0 center/1em url(image.svg) no-repeat;
+            padding-left: 1.1em;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>
+        <label>用户名</label>
+        <input value="zhao" disabled>
+        <label>密码</label>
+        <input type="password" required>
+    </p>
+
+    <p><a href="#top">回到顶部</a></p>
+    <p><a href="img/1.jpg">查看图片</a></p>
+</body>
+</html>

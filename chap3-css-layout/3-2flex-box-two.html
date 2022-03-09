@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 使用flow-warp设置折行显示 -->
+    <style>
+
+        .container {
+            display: flex;
+            width: 100px;
+            border: 2px solid red;
+            /* flex-wrap: wrap; */
+        }
+
+        .a, .b, .c, .d {
+            text-align: center;
+            padding: 1em;
+            width: 30px;
+        }
+
+        .a {background: #fcc;}
+        .b {background: #cfc;}
+        .c {background: #ccf;}
+        .d {background: #1dd;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="a">A</div>
+        <div class="b">B</div>
+        <div class="c">C</div>
+        <div class="d">D</div>
+    </div>
+</body>
+</html>

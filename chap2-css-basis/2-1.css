@@ -1,0 +1,10 @@
+h1 {
+    color: orange;
+    font-size: 24px;
+}
+
+p {
+    color: gray;
+    font-size: 14px;
+    line-height: 1.8;
+}

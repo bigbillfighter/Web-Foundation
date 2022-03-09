@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 当需要用户填写一些信息的时候，可以使用表单 -->
+    <!-- 表格可以使用标签form -->
+    <!-- 单行输入框可以使用input标签，type属性表示限定输入框的输入内容类型 -->
+    <!-- input标签里面的placeholder属性表示占位符，意为当输入框的内容是空的时候显示的文字 -->
+    <!-- type属性还可以是其它多种，当为file时表示上传文件，当为number时，是一个数字，
+        可以点击上下按钮切换，可以搭配value属性表示默认值 -->
+    <form>
+        <p>
+            <label>用户名:</label>
+            <input type="text" placeholder="3-32个字符">
+        </p>
+        <p>
+            <label>密码:</label>
+            <input type="password">
+        </p>
+        <p>
+            <label>年龄:</label>
+            <input type="number" value="20">
+        </p>
+        <p>
+            <label>头像:</label>
+            <input type="file">
+        </p>
+        <p>
+            <label>生日</label>
+            <input type="date">
+        </p>
+    </form>
+
+    <!-- 多行文本框,使用textarea标签,可以通过rows标签和cols标签设置文本框的大小,当然更加推荐使用css控制大小 -->
+    <!-- 如果想要设置默认值,需要在标签之间写出,而不是使用value属性 -->
+
+    <form>
+        <textarea cols="30" rows="8" placeholder="textarea">多行文本框</textarea>
+    </form>
+
+    <!-- input标签的type还可以表示单选框或者复选框,当type为radio的时候表示单选框,而且name属性相同的为一组,一组之间只能选择一个选项 -->
+    <!-- input在label外面的时候,需要点击选线按钮,有时按钮比较小,比较不方便.
+        所以我们可以把input放在label里面,这样可以实现点击文字就能选中标签,这相当于将文字和标签进行关联 -->
+    <!-- 也可以使用id配合for属性,即使input在label外面的时候也可以达到同样的效果 -->
+    <form>
+        <p>请输入您最喜欢的水果</p>
+        <input type="radio" name="fruit"><label>香蕉</label>
+        <input type="radio" name="fruit"><label>猕猴桃</label>
+        <input type="radio" name="fruit"><label>葡萄</label>
+        
+        <p>请选择您的衣服尺码</p>
+        <label><input type="radio" name="size">XS</label>
+        <label><input type="radio" name="size">S</label>
+        <label><input type="radio" name="size">M</label>
+        <label><input type="radio" name="size">L</label>
+        <input type="radio" name="size" id="xl"><label for="xl">XL</label>
+    </form>
+
+    <!-- 使用checkbox作为type可以实现复选框,由于复选框之间没有互斥的特性,所以可以不用分组 -->
+    <!-- 使用 checked 属性表示当前选项默认选中 -->
+    <form>
+        <p>请选择您最喜欢的水果</p>
+        <label><input type="checkbox" checked>香蕉</label>
+        <label><input type="checkbox">猕猴桃</label>
+        <label><input type="checkbox">葡萄</label>
+    </form>
+    <!-- input还有其它很多类型,诸如search,tel(电话),url,email,month,time,range,color等多种类型 -->
+
+    <!-- 使用select标签表示下拉选择框,选项可以使用option标签 -->
+    <select name="fruit">
+        <option value="1">苹果</option>
+        <option value="2">香蕉</option>
+        <option value="3" selected>芒果</option>
+        <option value="4">菠萝</option>
+        <option value="5">榴莲</option>
+        <option value="6">木瓜</option>
+    </select>
+
+    <!-- 使用button标签表示按钮 -->
+    <form>
+        <p>
+            <label>用户名</label>
+            <input type="text">
+        </p>
+        <p>
+            <label>密码</label>
+            <input type="password">
+        </p>
+        <button type="submit">提交按钮</button>
+        <button type="button">普通按钮</button>
+    </form>
+
+</body>
+</html>

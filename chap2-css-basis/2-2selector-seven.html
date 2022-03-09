@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- 组合器，组合器的条件全部满足才会显示对应样式 -->
+    <style>
+        .error{
+            color: red;
+        }
+
+        input.error{
+            border-color: red;
+        }
+    </style>
+
+    <!-- 组合器 -->
+    <!-- 名称        语法    说明                          示例 -->
+    <!-- 直接组合    AB      满足A同时满足B                 input:focus -->
+    <!-- 后代组合    A B     选中B，如果B是A的后代元素       nav a -->
+    <!-- 亲子组合    A > B   选中B，如果它是A的直接子元素    section > p -->
+
+    <style>
+        acticle p {
+            color: coral;
+        }
+
+        acticle > p{
+            color:limegreen;
+        }
+
+        article section h2{
+            border-bottom: 1px dashed #999;
+        }
+
+        /* 使用，隔开相同样式的选择器 */
+        h1, h2, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        [type="checkbox"], [type="radio"]{
+            box-sizing: border-box;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <label>
+        用户名
+        <input class="error" value="aa">
+    </label>
+    <span class="error">最少3个字符</span>
+
+    <article>
+        <h1>拉森火山国家公园</h1>
+        <p>拉森火山国家公园是位于。。</p>
+        <section>
+            <h2>气候</h2>
+            <p>因为拉森火山国家公园。。</p>
+        </section>
+    </article>
+</body>
+</html>

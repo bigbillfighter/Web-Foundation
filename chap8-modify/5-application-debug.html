@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.eastta.com/chrome/application.html -->
+<html><head lang="zh-cmn-Hans"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="dongtianee">
+    <meta name="Keywords" content="demo">
+    <meta name="description" content="前端调试部分demo">
+    <title>Chrome Dev Tools - Application</title>
+    <link rel="icon" type="image/png" href="./application-debug_files/t0127ebfa5a829054f1.png">
+    <!--base——CSS——begin-->
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #fff;
+            font: normal normal 16px/1.5 "微软雅黑",sans-serif;
+        }
+        .main{
+             max-width:800px;
+             background: #fff;
+             padding: 30px 10px;
+             margin:auto;
+             position: relative;
+             box-shadow:2px 2px 10px 5px #fff;
+         }
+        .title{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #396cd7;
+            line-height: 20px;
+        }
+        .title .title-link{
+            color: #999;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .title img,.title span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer{
+            margin-top:20px;
+            border-top: 1px solid #a5a5a5;
+            padding: 10px;
+            text-align: center;
+        }
+        div,p,ul,ol{
+            margin: 0;
+        }
+        code{
+            display: block;
+            color:#999
+        }
+    </style>
+    <!--base——CSS——end-->
+    <!--CSS——begin——-->
+    <style>
+        details{
+            margin: 15px 0 0 0;
+        }
+        details > * {
+            margin-bottom: 15px;
+        }
+       
+    </style>
+    <!--CSS——end——-->
+<script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script></head>
+<body>
+    <!--HTML——begin——-->
+    <div class="main">
+        <div class="title">
+            <img src="./application-debug_files/t0127ebfa5a829054f1.png" width="20" height="20"> <span>Chrome DevTools</span>
+        </div>
+        <h3>Application</h3>
+        <details>
+            <summary>1. LocalStorage、SessionStorage</summary>
+            <div>表格形式查看，删除、单个。<button onclick="localStorage.setItem(&#39;a&#39; + Math.random().toString(36).substr(2,5),Math.random().toString(36))">设置LS</button></div>
+        </details>
+        <details>
+            <summary>2. Cookie</summary>
+            <div>表格形式查看，删除全部、单个。</div>
+        </details>
+        <details>
+            <summary>3. 后台应用</summary>
+            <div>Web Workers,Notification,etc.</div>
+        </details>
+        <details>
+            <summary>4. 快捷清除</summary>
+            <div>快捷清除一切数据，包括cookie、ls</div>
+        </details>
+    </div>
+
+    <!--HTML——end——-->
+
+    <!--JavaScript——begin——-->
+    <script>
+    </script>
+    <!--JavaScript——end——-->
+
+</body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Web 框架的架构模式探讨</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">
+            <img src="https://75.team/static/upload/20170409/logo.svg" alt="起舞团logo" width="40">
+            奇舞团博客
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/archive">归档</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h2>Web 框架的架构模式探讨</h2>
+                <p><a href="#">sijie</a> 发表于<time>2018.05.16</time>, 共有2条评论</p>
+            </header>
+            <p>
+                在写干货之前，我想先探（qiang）讨（diao）两个问题，模式的局限性？模式有什么用？
+            </p>
+            <p>
+                最近看到一篇文章对我启发很大，
+                <a href="https://www.zhihu.com/question/19583219">许来西在知乎的回答《哲学和科学有什么关联？》</a>，
+                全篇较长，这里摘录我要引出的一点：
+            </p>
+            <blockquote>
+                <p>
+                    科学作为一种经验主义的认识论，有着经验主义的巨大缺陷：它永远不能产生绝对正确的真理。
+                    这是归纳法的本质决定的。而且值得注意的是，归纳不具有唯一性。
+                </p>
+            </blockquote>
+
+            <p>举一个简单的例子，我们假设一个世界，如下图：</p>
+            <p><img src="./img/frog.png" alt="一个青蛙世界"></p>
+            <p>科学家很快有了两种归纳方式：</p>
+            <ul>
+                <li>世界上所有的青蛙都戴眼镜</li>
+                <li>世界上所有戴眼镜的都是青蛙</li>
+            </ul>
+            <p>...</p>
+            <p>...</p>
+            <footer>
+                发表于<time>2018-05-16 17:13:17</time>，相关标签为<a href="/tags/label">设计模式</a>
+            </footer>
+            <h3 id="commits">本文2条评论</h3>
+            <article>
+                <p>膜拜大佬，学到了</p>
+            </article>
+            <article>
+                <p>
+                    数学模型的图片看不到，src的data和data-src对应不上啊。
+                </p>
+            </article>
+            <form>
+                <textarea placeholder="请写你的评论"></textarea>
+                <button type="submit">发表评论</button>
+            </form>
+        </article>
+    </main>
+
+    <aside>
+        <h3>热门标签</h3>
+        <ul>
+            <li><a href="/tags/a">JavaSript</a></li>
+            <li><a href="/tags/b">CSS</a></li>
+            <li><a href="/tags/c">STML</a></li>
+            <li><a href="/tags/d">设计模式</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy: 2018 - 奇舞团博客 - 75.team</p>
+    </footer>
+</body>
+</html>

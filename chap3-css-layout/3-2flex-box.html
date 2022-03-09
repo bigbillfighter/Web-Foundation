@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 由于父容器是flex box类型，所以就算子容器是块级， -->
+    <!-- 也要按父容器默认的摆放方式，按行从左到右布局 -->
+    <style>
+
+        .container {
+            display: flex;
+            border: 2px solid red;
+        }
+
+        .a, .b, .c {
+            text-align: center;
+            padding: 1em;
+        }
+
+        .a {background: #fcc;}
+        .b {background: #cfc;}
+        .c {background: #ccf;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="a">A</div>
+        <div class="b">B</div>
+        <div class="c">C</div>
+
+    </div>
+</body>
+</html>

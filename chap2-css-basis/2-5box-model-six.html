@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 第一个由于默认为content box，当设置为100%是，浏览器还会加上 */
+        /* padding和border的大小，实际上整个盒子会超出浏览器的边界 */
+        .a {
+            width: 100%;
+            padding: 1em;
+            border: 3px solid #ccc;
+        }
+        
+        .b {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 1em;
+            border: 3px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <p class="a">
+        Language, a system of conventional spoken, manual (signed), or written symbols by means of which human beings, 
+        as members of a social group and participants in its culture, express themselves. 
+    </p>
+
+    <p class="b">The functions of language include communication, the expression of identity, play, 
+        imaginative expression, and emotional release.</p>
+</body>
+</html>

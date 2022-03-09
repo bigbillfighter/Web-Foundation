@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.eastta.com/chrome/simulate.html -->
+<html><head lang="zh-cmn-Hans"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="dongtianee">
+    <meta name="Keywords" content="demo">
+    <meta name="description" content="前端调试部分demo">
+    <title>Chrome Dev Tools - Simulate</title>
+    <link rel="icon" type="image/png" href="./6-simulate-debug_files/t0127ebfa5a829054f1.png">
+    <!--base——CSS——begin-->
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #fff;
+            font: normal normal 16px/1.5 "微软雅黑",sans-serif;
+        }
+        .main{
+            max-width:800px;
+            background: #fff;
+            padding: 30px 10px;
+            margin:auto;
+            position: relative;
+         }
+        .title{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #396cd7;
+            line-height: 20px;
+        }
+        .title .title-link{
+            color: #999;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .title img,.title span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer{
+            margin-top:20px;
+            border-top: 1px solid #a5a5a5;
+            padding: 10px;
+            text-align: center;
+        }
+        div,p,ul,ol{
+            margin: 0;
+        }
+        code{
+            display: block;
+            color:#999
+        }
+    </style>
+    <!--base——CSS——end-->
+    <!--CSS——begin——-->
+    <style>
+        details{
+            margin: 15px 0 0 0;
+        }
+        details > * {
+            margin-bottom: 15px;
+        }
+        body,.main{
+            transition: all cubic-bezier(0.65, 0.05, 0.36, 1) .2s;
+        }
+        @media print{
+            body{
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+        @media (prefers-color-scheme: dark) { 
+            body{
+                background:#000;
+                color: #fff;
+            }
+            .main{
+                background: #000;
+                box-shadow: unset;
+            }
+            .title{
+                color:#eee;
+                border-color: #333;
+            }
+         }
+       
+    </style>
+    <!--CSS——end——-->
+<script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script></head>
+<body>
+    <!--HTML——begin——-->
+    <div class="main">
+        <div class="title">
+            <img src="./6-simulate-debug_files/t0127ebfa5a829054f1.png" width="20" height="20"> <span>Chrome DevTools</span>
+        </div>
+        <h3>Simulate</h3>
+        <details>
+            <summary>1. 设备模拟</summary>
+            <div>内置、新增UA</div>
+            <div>多宽度调试</div>
+            <div>网速模拟</div>
+            <div>屏幕旋转</div>
+        </details>
+        <details>
+            <summary>2. 网速、CPU速度模拟</summary>
+            <div>限制网速，模拟满网络、无网络、接口无法正常请求的情况 - Network</div>
+            <div>限制CPU运算速率 - Performance面板</div>
+        </details>
+        <details>
+            <summary>3. 地理位置模拟</summary>
+            <div>篡改定位api获取到的位置信息 - sensors <code>navigator.geolocation.getCurrentPosition(console.log)</code></div>
+            <div>修改设备的放置方式</div>
+        </details>
+        <details>
+            <summary>4. 媒体查询模拟</summary>
+            <div>系统配色模式 - rendering</div>
+            <div>媒体查询-当前设备类型 - rendering</div>
+        </details>
+    </div>
+
+    <!--HTML——end——-->
+
+    <!--JavaScript——begin——-->
+    <script>
+    </script>
+    <!--JavaScript——end——-->
+
+</body></html>

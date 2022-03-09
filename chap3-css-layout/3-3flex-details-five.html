@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            background: coral;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+        main {
+            flex-grow: 1;
+            order:1;
+            background: lightblue;
+        }
+
+        aside {
+            width: 180px;
+            background: lightgreen;
+        }
+
+        footer {
+            text-align: center;
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">My Blog</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Posts</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <article>
+                <h2>My blog title</h2>
+                <p>Some content in paragraph 1</p>
+                <p>Some content in paragraph 2</p>
+                <p>Some content in paragraph 3</p>
+                <p>Some content in paragraph 4</p>
+            </article>
+        </main>
+
+        <aside>
+            <h3>Hot topics</h3>
+            
+            <ol>
+                <li><a href="#">Topic 1</a></li>
+                <li><a href="#">Topic 2</a></li>
+                <li><a href="#">Topic 3</a></li>
+            </ol>
+        </aside>
+    </div>
+
+    <footer>
+        Copyrights &copy; 2018
+    </footer>
+</body>
+</html>

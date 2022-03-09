@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box-a{
+            position: absolute;
+            z-index: 1;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            background: #f44336;
+        }
+
+        .box-b {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            z-index: 2;
+            background-color: #0097a7;
+        }
+
+        .container-a {
+            position: relative;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-a">
+        <div class="box-a">a</div>
+    </div>
+
+    <div class="container-b">
+        <div class="box-b">b</div>
+    </div>
+</body>
+</html>

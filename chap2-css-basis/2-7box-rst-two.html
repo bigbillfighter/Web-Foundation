@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 一般我们会将几张图片拼成一张，这样可以加快加载的速度 -->
+    <style>
+        ul{
+            padding: 0;
+        }
+
+        li {
+            margin: 1em;
+            padding-left: 70px;
+            line-height: 64px;
+            background: url(./img/background.png) no-repeat 0 0;
+            overflow: hidden;
+        }
+
+        .dog {
+            background-position-y: -64px;
+        }
+
+        .lion {
+            background-position-y: -128px;
+        }
+
+        .bird {
+            background-position-y: -192px;
+        }
+
+        .fox {
+            background-position-y: -256px;
+        }
+
+        .pig {
+            background-position-y: -320px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="cat">Cat</li>
+        <li class="dog">Dog</li>
+        <li class="lion">Lion</li>
+        <li class="bird">Bird</li>
+        <li class="fox">Fox</li>
+        <li class="pig">Pig</li>
+
+    </ul>
+</body>
+</html>

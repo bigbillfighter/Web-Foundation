@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://www.eastta.com/chrome/source.html -->
+<html><head lang="zh-cmn-Hans"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="dongtianee">
+    <meta name="Keywords" content="demo">
+    <meta name="description" content="前端调试部分demo">
+    <title>Chrome Dev Tools - Source</title>
+    <link rel="icon" type="image/png" href="./source-debug_files/t0127ebfa5a829054f1.png">
+    <!--base——CSS——begin-->
+    <style>
+        html,body{
+            margin: 0;
+            padding: 20px;
+        }
+        body{
+            background: #fff;
+            font: normal normal 16px/1.5 "微软雅黑",sans-serif;
+        }
+        .main{
+            max-width:800px;
+            background: #fff;
+            padding: 30px 10px;
+            margin:auto;
+            position: relative;
+            box-shadow:2px 2px 10px 5px #fff;
+         }
+        .title{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #396cd7;
+            line-height: 20px;
+        }
+        .title .title-link{
+            color: #999;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .title img,.title span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer{
+            margin-top:20px;
+            border-top: 1px solid #a5a5a5;
+            padding: 10px;
+            text-align: center;
+        }
+        div,p,ul,ol{
+            margin: 0;
+        }
+        code{
+            display: block;
+            color:#999
+        }
+    </style>
+    <!--base——CSS——end-->
+    <!--CSS——begin——-->
+    <style>
+        details{
+            margin: 15px 0 0 0;
+        }
+        details > * {
+            margin-bottom: 15px;
+        }
+        .hover-panel{
+            position: absolute;
+            z-index:1;
+            width: 100px;
+            border: 1px solid #eee;
+            color: #fff;
+            padding: 50px;
+            background: #396bd7;
+            text-align: center;
+            display: none;
+        }
+    </style>
+    <!--CSS——end——-->
+<script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script></head>
+<body>
+    <!--HTML——begin——-->
+    <div class="main">
+        <div class="title">
+            <img src="./source-debug_files/t0127ebfa5a829054f1.png" width="20" height="20"> <span>Chrome DevTools</span>
+        </div>
+        <h3>Source</h3>
+        <details>
+            <summary>1. 脚本调试</summary>
+            <ul>
+                <li>断点 <button onclick="runCode()">Run Code</button></li>
+                <li>条件断点，日志断点</li>
+                <li>XHR断点<code>fetch('https://cdn.weather.hao.360.cn/api/weather_info.php?app=searchApp&amp;format=jsonp')</code>
+                    <code>fetch('https://www.so.com')</code>
+                </li>
+                <li>DOM断点</li>
+                <li>事件触发断点</li>
+            </ul>
+        </details>
+        <details>
+            <summary>2. 本地在线开发，实时存储</summary>
+            <ul>
+                <li>文件系统，选择文件夹后即可实时映射</li>
+                <li>保存后可实时生效，相当于在线的IDE。</li>
+                <li>与Elements联动，支持输入联想和快捷输入、替换</li>
+            </ul>
+        </details>
+        <details>
+            <summary>3. 线上环境轻松debug</summary>
+            <ul>
+                <li>使用file override</li>
+            </ul>
+        </details>
+        <details>
+            <summary>4. 收藏自己的魔术脚本</summary>
+            <ul>
+                <li>使用snippets，新建一些简短的魔术脚本，往往事半功倍。</li>
+                <li>比如：一键加载jQuery</li>
+            </ul>
+        </details>
+        <details>
+            <summary>5. 覆盖率、CSS Overview</summary>
+            <ul>
+                <li>show Coverage：查看哪些样式、脚本在生效/被执行了，并不能说明以后不会用到，只能作为参考</li>
+                <li>Experiments - CSS Overview</li>
+            </ul>
+        </details>
+        <details>
+            <summary>6. 调试hover态</summary>
+            <ul>
+                <li>当面板hover效果由js触发时，调试展开样式变得很不方便。</li>
+                <li>使用断点另辟蹊径，完成调试。</li>
+                <li><button id="hover">hover</button><div class="hover-panel">你好，我是panel</div></li>
+            </ul>
+        </details>
+        
+        <details>
+            <summary>7. 搜索与全局搜索</summary>
+            <ul>
+                <li>Search</li>
+            </ul>
+        </details>
+    </div>
+
+    <!--HTML——end——-->
+
+    <!--JavaScript——begin——-->
+    <script src="./source-debug_files/183.js.下载"></script>
+    <script>
+        $('#hover').hover(_=>{ $('.hover-panel').slideDown()}, _=>{$('.hover-panel').slideUp()})
+        function runCode() {
+            const a = Math.random();
+            console.log(a);
+            return a.toFixed(3)
+        }
+    </script>
+    <!--JavaScript——end——-->
+
+</body></html>

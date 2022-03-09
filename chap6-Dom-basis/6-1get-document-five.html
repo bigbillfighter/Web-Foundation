@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">1<span>2</span><!-- 3 --></p>
+    <div id="div">
+        <button id="bnt01" name="bnt">+1</button>
+        <button id="bnt02" name="bnt">-1</button>
+        <button id="bnt03" name="bnt">*2</button>
+        <button id="bntclick">clear</button>
+    </div>
+
+    <script type="text/javascript">
+        let num = 0;
+        document.body.addEventListener('click', function(ev){
+            switch(ev.target.id){
+                case 'bnt01':
+                    num++;
+                    break;
+                case 'bnt02':
+                    num--;
+                    break;
+                case 'bnt03':
+                    num *= 2;
+                    break;
+                case 'bntclick':
+                    num=0;
+                    break;
+            }
+            console.log(num);
+        }, false);
+    </script>
+</body>
+</html>

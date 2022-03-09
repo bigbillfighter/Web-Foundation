@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <ul class="list" id='ul1'>
+            <li><button id="bnt01" name="bnt">01</button></li>
+            <li><button id="bnt02" name="bnt">02</button></li>
+            <li><button id="bnt03" name="bnt">03</button></li>
+            <li><button id="bnt04" name="bnt">04</button></li>
+            <li><button id="bnt05" name="bnt">05</button></li>
+            <li><button id="bnt06" name="bnt">06</button></li>
+            <li><button id="bnt07" name="bnt">07</button></li>
+        </ul>
+    </div>
+
+    <!-- dom获取的方式 -->
+    <script type="text/javascript">
+        console.log(document.getElementsByTagName('button')===document.getElementsByTagName('button'));
+        console.log(document.getElementsByName('bnt')===document.getElementsByName('bnt'));
+        // 静态nodelist每次都是从动态nodelist返回一个静态映像，所以引用实际是不同的引用
+        console.log(document.querySelectorAll('button')===document.querySelectorAll('button'));
+        
+        // css postion：static只有HTMLElement才会有
+        // 子节点
+        let ul = document.getElementById('ul1');
+        console.log(ul.firstChild);
+        console.log(ul.lastChild);
+        console.log(ul.childNodes);
+        // 子元素
+        console.log(ul.firstElementChild);
+        console.log(ul.lastElementChild);
+        console.log(ul.children);
+        
+        // 父节点
+        console.log(ul.parentElement);
+
+        let html = document.documentElement;
+        console.log(html);
+        console.log(html.parentNode);
+    </script>
+</body>
+</html>

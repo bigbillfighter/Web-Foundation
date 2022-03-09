@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            height: 300px;
+            border: 2px solid red;
+        }
+
+        .line {
+            display: flex;
+            flex-basis: 100px;
+            flex-shrink: 0; 
+            height: 300px;
+            /* flex-direction: column; */
+        }
+
+        .a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k{
+            text-align: center;
+            padding: 2em;
+            flex-grow: 1;
+        }
+        
+        .a{background-color: #fcc; font-size: 12px;}
+        .b{background-color: #cfc; font-size: 8px;}
+        .c{background-color: #ccf; font-size: 10px;}
+        .d{background-color: #aff; font-size: 6px;}
+        .e{background-color: #faf; font-size: 24px;}
+        .f{background-color: #ffa; font-size: 18px;}
+        .g{background-color: #8c8; font-size: 22px;}
+        .h{background-color: #c88; font-size: 14px;}
+        .i{background-color: #88c; font-size: 20px;}
+        .j{background-color: #155; font-size: 26px;}
+        .k{background-color: #515; font-size: 16px;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class=".line">
+            <div class="a">A</div>
+            <div class="b">B</div>
+            <div class="c">C</div>
+            <div class="d">D</div>    
+        </div>
+        <div class=".line">
+            <div class="e">E</div>
+            <div class="f">F</div>
+            <div class="g">G</div>
+            <div class="h">H</div>
+        </div>
+        <div class=".line">
+            <div class="i">I</div>
+            <div class="j">J</div>
+            <div class="k">K</div>    
+        </div>
+    </div>
+</body>
+</html>

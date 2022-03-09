@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--表格可以放在table标签里面-->
+    <!--表头可以放在thead标签里面-->
+    <!--内容可以放在tbody标签里面-->
+    <!--表中一行的内容可以放在tr标签里面，以为table row，无论是表头还是表的内容-->
+    <!-- 使用th表示表头的单元格 -->
+    <!-- 使用td表示内容的单元格，td意为table data -->
+    <table>
+        <thead>
+            <tr>
+                <th>客户id</th>
+                <th>客户名称</th>
+                <th>所属城市</th>
+                <th>账户余额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123</td>
+                <td>客户A</td>
+                <td>北京</td>
+                <td>3434.32</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>客户B</td>
+                <td>上海</td>
+                <td>2544.00</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>客户C</td>
+                <td>深圳</td>
+                <td>433.09</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 使用rowspan或者colspan属性让一个内容能够宽约多行 -->
+    <table>
+        <thead>
+            <tr>
+                <th>分类</th>
+                <th>技能</th>
+                <th>分数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">编程语言</td>
+                <td>JavaSript</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Swift</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td rowspan="2">产品设计</td>
+                <td>Photoshop</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Axure</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td rowspan="2">销售</td>
+                <td>社交媒体</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>SEO</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- caption表示表格的名称，tfoot表示表格的尾部 -->
+    
+    <table>
+        <caption>购物小票</caption>
+        <thead>
+            <tr>
+                <th>商品</th>
+                <th>数量</th>
+                <th>单价</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>巧克力</td>
+                <td>1</td>
+                <td>12.00</td>
+                <td>12.00</td>
+            </tr>
+            <tr>
+                <td>啤酒</td>
+                <td>2</td>
+                <td>3.00</td>
+                <td>6，00</td>
+            </tr>
+            <tr>
+                <td>矿泉水</td>
+                <td>24</td>
+                <td>0.80</td>
+                <td>19.20</td>
+            </tr>
+            <tr>
+                <td>花生</td>
+                <td>2</td>
+                <td>11.00</td>
+                <td>22.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">汇总</td>
+                <td>59.20</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

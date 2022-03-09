@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            border: 2px solid red;
+            display: grid;
+            height: 300px;
+            width: 600px;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .a, .b, .c, .d, .e{
+            text-align: center;
+            padding: 2px;
+            font-size: 16px;
+        }
+
+        .a{background-color: #fcf;}
+        .b{background-color: #cff;}
+        .c{background-color: #ffc;}
+        .d{background-color: #acc;}
+        .e{background-color: #cac;}
+
+        /* .a{
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-row-end:3;
+            grid-column-end:3;
+        } */
+
+        /* A会被B挡住 */
+        .a {
+            grid-area: 2/2/4/4;
+        }
+        .b {
+            grid-area: 1/1/3/3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class='a'>A</div>
+        <div class='b'>B</div>
+        <div class='c'>C</div>
+        <div class='d'>D</div>
+        <div class='e'>E</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">1<span>2</span><!-- 3 --></p>
+    <div id="main">
+        <button id="bnt01" name="bnt">01</button>
+        <button id="bnt02" name="bnt">02</button>
+        <button id="bnt03" name="bnt">03</button>
+        <button id="bntclick">点击创建节点</button>
+    </div>
+
+    <script type="text/javascript">
+        let p = document.getElementById('p');
+        // 判断是否有某个属性
+        console.log(p.hasAttribute('title'));
+        console.log(p.hasAttribute('id'));
+        // 属性获取
+        console.log(p.getAttribute('title'));
+        console.log(p.getAttribute('id'));
+
+        p.removeAttribute('id');
+        console.log(p.hasAttribute('id'));
+
+        let bnt1 = document.getElementById('bnt01');
+        bnt1.addEventListener('click', function(ev){
+            console.log(`click on: [${ev.pageX}, ${ev.pageY}]`)
+        }, false); // 这里的false表示是否在捕获阶段触发，false表示在冒泡阶段触发，否则在捕获阶段
+
+        let bnt2 = document.getElementById(`bnt02`);
+        bnt2.addEventListener('click', function(ev){
+            console.log(`click on: [${ev.pageX}, ${ev.pageY}]`)
+        }, {
+            passive: false, // 是否允许 ev.preventDefault() 取消事件
+            capture: false, // 是否在捕获阶段触发
+            once: false // 是否只触发一次
+        });
+
+        function handler(ev) {
+            console.log(`click on: [${ev.pageX}, ${ev.pageY}]`);
+        }
+        let bnt3 = document.getElementById('bnt03');
+        bnt3.addEventListener('click', handler, false);
+        // bnt3.removeEventListener('click', handler, false);
+        
+        // 注意这里的参数要和添加时相同，否则可能会失败，而且要是相同的函数，
+        // 如果再写一个相同的函数，哪怕函数名和内容一模一样，也会解绑失败
+        
+        // bnt3.removeEventListener('click', function handler(ev) {
+        //     console.log(`click on: [${ev.pageX}, ${ev.pageY}]`);
+        // }, false);  // 会失败
+    </script>
+</body>
+</html>

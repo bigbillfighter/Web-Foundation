@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 属性冲突时按照特异度选择选择器 -->
+    <style>
+        .title {
+            color: blue;
+        }
+
+        article h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1 class="title">
+            language is beautiful.
+        </h1>
+    </article>
+</body>
+</html>

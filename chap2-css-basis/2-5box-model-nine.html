@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- max-height、min-height -->
+    <style>
+        article img {
+            max-width: 100%;
+        }
+
+        article .description {
+            line-height: 1.5;
+            /* 3倍行高，就是最多显示两行 */
+            max-height: 3em; 
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <p>
+            <img src="./img/2.jpg" alt="img">
+        </p>
+        <p class="description"> 
+            当容器的大小不足以容纳整个其中的内容的时候，overflow属性可以改变其多于部分显示的样式
+
+            - visible，默认方式，超出的范围会原样显示
+            - hidden，溢出文本隐藏
+            - scroll，加一个滚动条，滑动滚动条可以看到隐藏的内容
+        </p>
+    </article>
+</body>
+</html>
